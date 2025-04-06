@@ -1,0 +1,20 @@
+
+# Ignore Pi-hole sensitive configs
+etc-pihole/setupVars.conf
+etc-pihole/pihole-FTL.db
+etc-pihole/*.log
+etc-pihole/*.journal
+
+# Ignore DHCP leases and temp files
+etc-dnsmasq.d/*.leases
+etc-dnsmasq.d/*.bak
+etc-dnsmasq.d/*.tmp
+
+# Ignore unbound runtime cache
+etc-unbound/*
+!etc-unbound/root.key
+
+# System clutter
+*.log
+.DS_Store
+
