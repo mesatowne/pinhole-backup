@@ -1,7 +1,7 @@
 # Pi-hole configuration file (v6.1)
 # Encoding: UTF-8
 # This file is managed by pihole-FTL
-# Last updated on 2025-04-06 07:08:03 BST
+# Last updated on 2025-04-06 21:39:58 BST
 
 [dns]
   # Array of upstream DNS servers used by Pi-hole
@@ -100,7 +100,9 @@
   #
   # Possible values are:
   #     Array of custom DNS records each one in HOSTS form: "IP HOSTNAME"
-  hosts = []
+  hosts = [
+    "100.126.150.16 iphone-12-pro-max.tail6cb5ed.ts.net"
+  ] ### CHANGED, default = []
 
   # If set, A and AAAA queries for plain names, without dots or domain parts, are never
   # forwarded to upstream nameservers
@@ -190,7 +192,7 @@
   #       configuration file. This is useful if you want to manually configure the
   #       listening mode in auxiliary configuration files. This option is really meant
   #       for advanced users only, support for this option may be limited.
-  listeningMode = "LOCAL"
+  listeningMode = "ALL" ### CHANGED, default = "LOCAL"
 
   # Log DNS queries and replies to pihole.log
   queryLogging = true
@@ -228,7 +230,9 @@
   #     array of reverse servers each one in one of the following forms:
   #     "<enabled>,<ip-address>[/<prefix-len>],<server>[#<port>][,<domain>]", e.g.,
   #     "true,192.168.0.0/24,192.168.0.1,fritz.box"
-  revServers = []
+  revServers = [
+    "true,192.168.12.0/24,192.168.12.1,lan"
+  ] ### CHANGED, default = []
 
   [dns.cache]
     # Cache size of the DNS server. Note that expiring cache entries naturally make room
@@ -812,7 +816,7 @@
     #
     # Possible values are:
     #     <valid Pi-hole password hash>
-    pwhash = "$BALLOON-SHA256$v=1$s=1024,t=32$XAOV/E7wmXzrsABnPIVl/w==$EPDtVvy7PwevzEMm/0XeOgTvS2ZU+artdl3OxGD5XH4=" ### CHANGED, default = ""
+    pwhash = "$BALLOON-SHA256$v=1$s=1024,t=32$6vRo97rd7SZeFut3Yk9dAw==$fuqnxiZubo5fTr/mmxoxScV+dbaBfjCvTMq5SDrfLMo=" ### CHANGED, default = ""
 
     # Pi-hole 2FA TOTP secret. When set to something different than "", 2FA authentication
     # will be enforced for the API and the web interface. This setting is write-only, you
@@ -1202,6 +1206,6 @@
   all = false
 
 # Configuration statistics:
-# 156 total entries out of which 154 entries are default
-# --> 2 entries are modified
+# 156 total entries out of which 151 entries are default
+# --> 5 entries are modified
 

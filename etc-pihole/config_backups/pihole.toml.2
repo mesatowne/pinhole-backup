@@ -1,7 +1,7 @@
 # Pi-hole configuration file (v6.1)
 # Encoding: UTF-8
 # This file is managed by pihole-FTL
-# Last updated on 2025-04-06 21:54:45 BST
+# Last updated on 2025-04-09 04:44:15 BST
 
 [dns]
   # Array of upstream DNS servers used by Pi-hole
@@ -10,8 +10,7 @@
   # Possible values are:
   #     array of IP addresses and/or hostnames, optionally with a port (#...)
   upstreams = [
-    "1.1.1.1",
-    "1.0.0.1"
+    "1.1.1.1"
   ] ### CHANGED, default = []
 
   # Use this option to control deep CNAME inspection. Disabling it might be beneficial
@@ -264,7 +263,7 @@
 
   [dns.blocking]
     # Should FTL block queries?
-    active = true
+    active = false ### CHANGED, default = true
 
     # How should FTL reply to blocked queries?
     #
@@ -1206,6 +1205,6 @@
   all = false
 
 # Configuration statistics:
-# 156 total entries out of which 150 entries are default
-# --> 6 entries are modified
+# 156 total entries out of which 149 entries are default
+# --> 7 entries are modified
 

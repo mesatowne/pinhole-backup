@@ -1,7 +1,7 @@
 # Pi-hole configuration file (v6.1)
 # Encoding: UTF-8
 # This file is managed by pihole-FTL
-# Last updated on 2025-04-06 21:08:22 BST
+# Last updated on 2025-04-06 23:03:55 BST
 
 [dns]
   # Array of upstream DNS servers used by Pi-hole
@@ -11,7 +11,8 @@
   #     array of IP addresses and/or hostnames, optionally with a port (#...)
   upstreams = [
     "1.1.1.1",
-    "1.0.0.1"
+    "1.0.0.1",
+    "127.0.0.1#5335"
   ] ### CHANGED, default = []
 
   # Use this option to control deep CNAME inspection. Disabling it might be beneficial
@@ -100,11 +101,13 @@
   #
   # Possible values are:
   #     Array of custom DNS records each one in HOSTS form: "IP HOSTNAME"
-  hosts = []
+  hosts = [
+    "100.126.150.16 iphone-12-pro-max.tail6cb5ed.ts.net"
+  ] ### CHANGED, default = []
 
   # If set, A and AAAA queries for plain names, without dots or domain parts, are never
   # forwarded to upstream nameservers
-  domainNeeded = false
+  domainNeeded = true ### CHANGED, default = false
 
   # If set, the domain is added to simple names (without a period) in /etc/hosts in the
   # same way as for DHCP-derived names
@@ -190,7 +193,7 @@
   #       configuration file. This is useful if you want to manually configure the
   #       listening mode in auxiliary configuration files. This option is really meant
   #       for advanced users only, support for this option may be limited.
-  listeningMode = "LOCAL"
+  listeningMode = "ALL" ### CHANGED, default = "LOCAL"
 
   # Log DNS queries and replies to pihole.log
   queryLogging = true
@@ -1204,6 +1207,6 @@
   all = false
 
 # Configuration statistics:
-# 156 total entries out of which 153 entries are default
-# --> 3 entries are modified
+# 156 total entries out of which 150 entries are default
+# --> 6 entries are modified
 

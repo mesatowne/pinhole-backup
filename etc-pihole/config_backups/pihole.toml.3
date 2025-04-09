@@ -1,7 +1,7 @@
 # Pi-hole configuration file (v6.1)
 # Encoding: UTF-8
 # This file is managed by pihole-FTL
-# Last updated on 2025-04-06 21:39:58 BST
+# Last updated on 2025-04-09 04:28:00 BST
 
 [dns]
   # Array of upstream DNS servers used by Pi-hole
@@ -10,8 +10,7 @@
   # Possible values are:
   #     array of IP addresses and/or hostnames, optionally with a port (#...)
   upstreams = [
-    "1.1.1.1",
-    "1.0.0.1"
+    "1.1.1.1"
   ] ### CHANGED, default = []
 
   # Use this option to control deep CNAME inspection. Disabling it might be beneficial
@@ -106,7 +105,7 @@
 
   # If set, A and AAAA queries for plain names, without dots or domain parts, are never
   # forwarded to upstream nameservers
-  domainNeeded = false
+  domainNeeded = true ### CHANGED, default = false
 
   # If set, the domain is added to simple names (without a period) in /etc/hosts in the
   # same way as for DHCP-derived names
@@ -1206,6 +1205,6 @@
   all = false
 
 # Configuration statistics:
-# 156 total entries out of which 151 entries are default
-# --> 5 entries are modified
+# 156 total entries out of which 150 entries are default
+# --> 6 entries are modified
 
